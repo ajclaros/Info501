@@ -1,0 +1,67 @@
+#+Title: The Emergence of Informative Higher Scales in Complex Networks
+#+Author: Andrew Claros
+
+#+OPTIONS: toc:nil num:nil date:nil
+#+LATEX_HEADER: \usepackage[margin=0.5in]{geometry}
+#+LATEX_HEADER: \include{preamble}
+#+LATEX_HEADER: \usepackage{cancel}
+#+LATEX_HEADER: \usepackage{mathtools}
+#+LATEX_HEADER: \usepackage{mathrsfs}
+
+#+REVEAL_ROOT: ./
+
+#+OPTIONS: reveal_center:t reveal_progress:t reveal_history:nil reveal_control:t
+#+OPTIONS: reveal_mathjax:t reveal_rolling_links:t reveal_keyboard:t reveal_overview:t num:nil
+#+OPTIONS: reveal_width:1440 reveal_height:2560
+#+OPTIONS: toc:nil
+#+OPTIONS: ^:{}
+#+REVEAL_MARGIN: 0.05
+#+REVEAL_MIN_SCALE: 1.5
+#+REVEAL_MAX_SCALE: 5.5
+#+REVEAL_TRANS: cube
+#+REVEAL_THEME: beige
+#+REVEAL_TITLE_SLIDE: <section class="title-slide">    <h1>%t</h1>  <h4>Andrew Claros</h4> </section>
+* Graph representation
+#+REVEAL_TRANS: nil
+#+REVEAL_HTML:<div class="columns"><img class="top" src="graph1.png" height="700" width="600"> </div>
+#+ATTR_REVEAL: :frag t :frag_idx 1
+-  \[\begin{bmatrix} 0 & 0.50 & 0.25 & 0.25 \\ 0.5 & 0 & 0.5 & 0 \\ 0 & 0 & 1.00 & 0 \\ 0 & 0 &0 & 1.00\end{bmatrix}\]
+* Out-weight vector:
+#+ATTR_REVEAL: :frag appear
+#+ATTR_REVEAL: :frag t :frag_idx 1
+#+REVEAL_HTML:<div class="columns"><img class="top" src="graph1.png" height="700" width="600"> </div>
+- $W_{i}^{out}=W_{1}=\langle 0.5, 0.25, 0.25\rangle$
+* out-weight summed vector:
+#+REVEAL_HTML:<div class="columns"><img class="top" src="graph1.png" height="700" width="600"> </div>
+$\langle W_{i}^{out} \rangle= \langle 1, 1.5, 0.75, 0.25\rangle$
+
+* Shannon Entropy
+- $\mathcal{H}(X)= -\sum p(x)log_{2}p(x)$
+
+* Shannon Entropy (for each weight)
+- $\mathcal{H}(w_{{ij}})= -\sum p(w_{{ij}})log_{2}p(\frac{1}{w_{{ij}}})$
+* Average Entropy
+- $\langle\mathcal{H}(W_{i}^{out})\rangle=ave(\langle \mathcal{H}(W_{1}^{out}), \mathcal{H}(W_{2}^{out}), \ldots \mathcal{H}(W_{n}^{out})\rangle)$
+* Entropy across the network
+- $\mathcal{H}(\langle W_{i}^{out}\rangle)$
+
+* Effective Information
+- $EI = \mathcal{H}(\langle W_{i}^{out}\rangle) - \langle\mathcal{H}(W_{i}^{out})\rangle$
+* Effective Information in random vs preferential-attachment graphs
+
+#+REVEAL_HTML:<div class="columns"><img class="top" src="randomvspowerlaw.png" height="900" width="2000"> </div>
+* Determinism vs Degeneracy
+- Determinism $=log_{2}(N)-\langle \mathcal{H}(W_{i}^{out})\rangle$
+- Degeneracy $= log_{2}(N)-\mathcal{H}(\langle W_{i}^{out}\rangle)$
+* Determinism vs Degeneracy
+#+REVEAL_HTML:<div class="columns"><img class="top" src="determinismvsdegeneracy.png" height="900" width="2000"> </div>
+* Effective Information on Real Networks
+- Applied to real networks from database with maximum of 4000 nodes
+- Needed to take into account different sizes: effectiveness $=\frac{EI}{log_{2}(N)}$
+- low effectiveness have either high degeneracy or low determinism, or a combination of both
+* Network Macroscales
+#+REVEAL_HTML:<div class="columns"><img class="top" src="macroscale.png" width="1199" height="919"> </div>
+* Causual Emergence Reveals scale of networks
+#+REVEAL_HTML:<div class="columns"><img class="top" src="causual.png" width="1267" height="719"> </div>
+
+* Thank You!
